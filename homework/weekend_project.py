@@ -85,6 +85,7 @@ def mark_task(incomplete, complete):
         completed_task = input("What task would you like to mark as complete?: ")
         incomplete.remove(completed_task)
         complete.append(completed_task)
+        print(f"Your updated incomplete to-do list now includes these tasks: {incomplete_tasks}")
     elif task == "2":
         print("No tasks will be altered")
     else:
@@ -96,6 +97,7 @@ def delete_task(incomplete, complete):
         print(f"Your current incomplete to-do list includes these tasks: {incomplete_tasks}")
         incomplete_task_to_delete = input("What task would you like to delete?: ")
         incomplete.remove(incomplete_task_to_delete)
+        print(f"Your updated incomplete to-do list now includes these tasks: {incomplete_tasks}")
     elif task == "2":
         print(f"Your current complete to-do list includes these tasks: {completed_tasks}")
         complete_task_to_delete = input("What task would you like to delete?: ")
@@ -125,7 +127,6 @@ def app_run(incomplete, complete):
             
         elif response == "3":
             mark_task(incomplete, complete)
-            print("Task successfully marked as complete!")
             
         elif response == "4":
             delete_task(incomplete, complete)
@@ -133,9 +134,9 @@ def app_run(incomplete, complete):
             
         elif response == "5":
             print("Good-bye!")
-            
+            break
+        
         else:
             print('Please enter a valid response. Must be "1", "2", "3", "4", or "5"!')
-            break
-    
+        
 app_run(incomplete_tasks, completed_tasks)
