@@ -1,20 +1,3 @@
-
-# 4.) Error Handling:
-# Implement error handling using try, except, else, and finally blocks to handle potential issues.
-
-# 6.) Testing and Debugging:
-# Thoroughly test your application to identify and fix any bugs.
-# Consider edge cases, such as empty task lists or incorrect user input.
-
-# 7.) Documentation:
-# Include a README file that explains how to run the application and provides a brief overview of its features.
-
-# 8.) Optional Features (Bonus):
-# If you feel adventurous, you can add extra features like task priorities, due dates, or color-coding tasks based on their status.
-
-
-
-
 # Mini-project | To-Do list Application
 
 completed_tasks = []                                                                                # Create an empty lists to append completed tasks to
@@ -25,7 +8,7 @@ def add_task(incomplete):                                                       
     if task not in incomplete:                                                                      # making sure the task user enters is not already on the incomplete_tasks list
         incomplete.append(task)                                                                     # adding the task the user entered to the incomplete_tasks list
         print(f"Your current incomplete to-do list now includes these tasks: {incomplete_tasks}")   # incomplete_tasks lists is printed for the user so they can see all tasks in the list
-    else:
+    else:                                                                                           # created an else statement to flag that the user's task request is already in the list
         print("That task is already on your to-do list!")                                           # prints message to user letting them know the task they tried to add was already on the incomplete_tasks list 
         
 def view_task(incomplete, complete):                                                                            # defined a function for viewing tasks that accepts user input
@@ -36,7 +19,7 @@ def view_task(incomplete, complete):                                            
     elif task == "2":                                                                                           # created an elif statement to see if user input is equal to 2
         for task in complete:                                                                                   # created a for loop to loop through completed_tasks list
             print(task)                                                                                         # prints out each task included in completed_tasks list for the user
-    else:
+    else:                                                                                                       # created an else statement to flag invalid user input
         print('Please enter a valid response of "1" or "2"!')                                                   # prints message to user letting them know they need to enter a valid response
         
 def mark_task(incomplete, complete):                                                                                # defined a function for marking tasks complete that accepts user input
@@ -49,7 +32,7 @@ def mark_task(incomplete, complete):                                            
         print(f"Your updated incomplete to-do list now includes these tasks: {incomplete_tasks}")                   # prints out an updated incomplete_tasks list for the user so they can see the changes 
     elif task == "2":                                                                                               # created an elif statement to see if the user input is equal to 2
         print("No tasks will be altered")                                                                           # prints out a message for user letting them know nothing was changed 
-    else:
+    else:                                                                                                           # created an else statement to flag invalid user input
         print('Please enter a valid response of "1" or "2"!')                                                       # prints out a message to user letting them know they need to enter a valid response 
 
 def delete_task(incomplete, complete):                                                                                              # defined a function for deleting tasks that accepts user input
@@ -63,13 +46,11 @@ def delete_task(incomplete, complete):                                          
         print(f"Your current complete to-do list includes these tasks: {completed_tasks}")                                          # prints out the tasks currently in completed_tasks list for user
         complete_task_to_delete = input("What task would you like to delete?: ")                                                    # taking input from the user to see what task they want to delete in a new variable 
         complete.remove(complete_task_to_delete)                                                                                    # removing the task that the user specified from the completed_tasks list
-    else:
+    else:                                                                                                                           # created an else statement to flag invalid user input
         print('Invalid response. Please enter a valid response of "1" or "2"!')                                                     # prints out a message to user letting them know they need to enter a valid response
 
-# Defining a function with a while loop that displays a welcoming message and a menu with options for the user to choose from
-
-def app_run(incomplete, complete):                                                                                                     
-    while True:
+def app_run(incomplete, complete):                                                             # Defining a function with two parameters that displays a welcoming message and a menu with options for the user to choose from                                                                                                                   
+    while True:                                                                                # Created a while loop in order to be able to run through the program multiple times until user instructs to end the program 
         response = input("""Welcome to the To-Do List App! The menu is listed below. Please enter a number for your desired selection.  
 
         Menu:
@@ -80,26 +61,26 @@ def app_run(incomplete, complete):
             5. Quit
             """)
 
-        if response == "1":
-            add_task(incomplete)
-            print("Task added successfully!")
+        if response == "1":                                                                     # created an elif statement to see if the user input is equal to 1
+            add_task(incomplete)                                                                # Calling the function
+            print("Task added successfully!")                                                   # prints out a message to user letting them know the task was added
             
-        elif response == "2":
-            view_task(incomplete, complete)
-            print("Displaying your tasks!")
+        elif response == "2":                                                                   # created an elif statement to see if the user input is equal to 2
+            view_task(incomplete, complete)                                                     # Calling the function
+            print("Displaying your tasks!")                                                     # prints out a message to user letting them know their tasks are being displayed 
             
-        elif response == "3":
-            mark_task(incomplete, complete)
+        elif response == "3":                                                                   # created an elif statement to see if the user input is equal to 3
+            mark_task(incomplete, complete)                                                     # Calling the function
+                                                                                                
+        elif response == "4":                                                                   # created an elif statement to see if the user input is equal to 4
+            delete_task(incomplete, complete)                                                   # Calling the function
+            print("Task successfully deleted!")                                                 # prints out a message to user letting them know the task was deleted 
             
-        elif response == "4":
-            delete_task(incomplete, complete)
-            print("Task successfully deleted!")
-            
-        elif response == "5":
-            print("Good-bye!")
-            break
+        elif response == "5":                                                                   # created an elif statement to see if the user input is equal to 5
+            print("Good-bye!")                                                                  # prints out a message to the user saying good-bye since the program is ending 
+            break                                                                               # breaking out of the while loop to end the program 
         
-        else:
-            print('Please enter a valid response. Must be "1", "2", "3", "4", or "5"!')
+        else:                                                                                   # created an else statement to flag invalid user input
+            print('Please enter a valid response. Must be "1", "2", "3", "4", or "5"!')         # prints out a message to user letting them know they need to enter a valid response
         
-app_run(incomplete_tasks, completed_tasks)
+app_run(incomplete_tasks, completed_tasks)                                                      # Calling the function & assigning arguments to the parameters 

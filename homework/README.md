@@ -1,10 +1,8 @@
-Mini-project | To-Do list Application
+# Mini-project | To-Do list Application
 
-1.) User Interface (UI):
-Create a command-line interface (CLI) for the To-Do List Application.
-Display a welcoming message and a menu with the following options:
+**This application greets the user then gives the user a menu to select a choice from.** *(See welcome message & menu below)*
 
-Welcome to the To-Do List App!
+*Welcome to the To-Do List App!*
     Menu:
     1. Add a task
     2. View tasks
@@ -12,36 +10,10 @@ Welcome to the To-Do List App!
     4. Delete a task
     5. Quit
 
-2.) To-Do List Features:
-Implement the following features for the To-Do List:
-Adding a task with a title
-Viewing the list of tasks with from Incomplete and Complete tasks.
-Marking a task as complete.
-Deleting a task.
-Quitting the application.
+**The user's selection includes entering a number 1 - 5 to choose what they would like to do.**
 
-3.) User Interaction:
-Allow users to interact with the application by selecting menu options using input().
-Implement input validation to handle unexpected user input gracefully.
-
-4.) Error Handling:
-Implement error handling using try, except, else, and finally blocks to handle potential issues.
-
-5.) Code Organization:
-Organize your code into functions to promote modularity and readability.
-Use meaningful function names with appropriate comments and docstrings for clarity.
-
-6.) Testing and Debugging:
-Thoroughly test your application to identify and fix any bugs.
-Consider edge cases, such as empty task lists or incorrect user input.
-
-7.) Documentation:
-Include a README file that explains how to run the application and provides a brief overview of its features.
-
-8.) Optional Features (Bonus):
-If you feel adventurous, you can add extra features like task priorities, due dates, or color-coding tasks based on their status.
-
-9.) GitHub Repository:
-Create a GitHub repository for your project.
-Commit your code to the repository regularly.
-Include a link to your GitHub repository in your project documentation.
+**Next the user is prompt to enter a task so that what ever action they previously chose can be performed on the task they entered.** *(See examples below)*
+     - If the user chooses "1" they will then be asked what task they would like to add to their list. 
+     - Once they enter their list and press enter, that task will be added to their list. 
+     - The user is then taken back to the welcome message and menu to make another selection. 
+     - Once the user is done making adjustments to their list they can simply enter 5 to end the program. 
