@@ -3,12 +3,12 @@
 **This application greets the user then gives the user a menu to select a choice from.** *(See welcome message & menu below)*
 
 *Welcome to the To-Do List App!*
-    Menu:
-    1. Add a task
-    2. View tasks
-    3. Mark a task as complete
-    4. Delete a task
-    5. Quit
+## Menu:
+1. Add a task
+2. View tasks
+3. Mark a task as complete
+4. Delete a task
+5. Quit
 
 **The user's selection includes entering a number 1 - 5 to choose what they would like to do.**
 
